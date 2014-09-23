@@ -1,22 +1,29 @@
 package jp.shuma.recruit.studio_umi.work1;
 
+import java.util.InputMismatchException;
 /**
- * Mainクラス．<br>
- * 課題「指定された年の 1 年間の合計秒数を返すプログラムを書いてください．」<br>
- *
+ * Yearクラス．<br>
+ * 年数を持ち，各時間単位への変換を行うメソッドを持つ．<br>
+ * グレゴリオ暦(紀元後を対象とする)．
  * @author shumaF
+ * @version 0.2 2014/09/23 11:20
  * @since 0.1 2014/09/20 0:30
  */
 public class Year {
 	/**
-	 * 年数を持つ．
+	 * 年数を持つ．<br>
+	 * 0以上の値を持つ(=紀元後)．
 	 */
 	private int year = 0;
 	/**
 	 * コンストラクタ．
 	 * @param args Command Line Arguments.
+	 * @throws java.util.InputMismatchException 紀元前が入力された場合．
 	 */
-	public Year(int year) {
+	public Year(int year) throws InputMismatchException {
+		if(year < 0) {
+			throw new InputMismatchException();
+		}
 		this.year = year;
 	}
 	/**
