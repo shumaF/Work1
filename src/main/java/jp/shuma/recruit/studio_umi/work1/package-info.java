@@ -1,5 +1,4 @@
 package jp.shuma.recruit.studio_umi.work1;
-
 /**
  * Studio Umiの課題プログラム．<br>
  * Main.java ... Mainクラスとして，入力と一連の処理を行う．<br>
