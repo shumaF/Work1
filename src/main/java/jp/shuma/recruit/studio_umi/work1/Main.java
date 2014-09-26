@@ -13,57 +13,57 @@ import java.util.NoSuchElementException;
  * @since 0.1 2014/09/20 0:30
  */
 public class Main {
-    /**
-     * コンストラクタ．<br>
-     * 一連の処理を逐次に行う．<br>
-     * 入力  Yearオブジェクト作成  秒を取得  出力
-     * @param args Command Line Arguments.
-     */
-    public Main(final String[] args) {
-        try {
-            int num = this.inputInt(args.length == 0 ? null : args[0]);
-            Year year = new Year(num);
-            int sec = year.toSecond();
-            System.out.println(sec);
-        } catch (InputMismatchException e) {
-            System.err.println("入力は0以上の整数で行ってください．");
-            return;
-        }
-    }
-    /**
-     * 入力された数を返す．<br>
-     * 引数がnullの場合は，入力を受け付ける．<br>
-     * ~ とりあえずは，引数の場合のみ．
-     * @param arg intへ変換する数．<br>
-     *            nullの場合は，入力を受け付ける．
-     * @return 入力された数．
-     * @throws java.util.InputMismatchException 入力が数値になっていない．
-     */
-    public final int inputInt(final String arg) throws InputMismatchException {
-        int num = 0;
-        try {
-            if (arg  == null) {
-                Scanner scan = new Scanner(System.in);
-                num = scan.nextInt();
-            } else {
-                num = Integer.parseInt(arg);
-            }
-        }  catch (NumberFormatException e) {
-            throw new InputMismatchException();
-            //入力の値がちがうことから，InputMismatchExceptionと
-            //同じであると考え，InputMismatchExceptionとして処理する．
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-        } catch (IllegalStateException e) {
-            e.printStackTrace();
-        }
-        return num;
-    }
-    /**
-     * mainメソッド．
-     * @param args Command Line Arguments.
-     */
-    public static void main(final String[] args) {
-        new Main(args);
-    }
+	/**
+	 * コンストラクタ．<br>
+	 * 一連の処理を逐次に行う．<br>
+	 * 入力  Yearオブジェクト作成  秒を取得  出力
+	 * @param args Command Line Arguments.
+	 */
+	public Main(final String[] args) {
+		try {
+			int num = this.inputInt(args.length == 0 ? null : args[0]);
+			Year year = new Year(num);
+			int sec = year.toSecond();
+			System.out.println(sec);
+		} catch (InputMismatchException e) {
+			System.err.println("入力は0以上の整数で行ってください．");
+			return;
+		}
+	}
+	/**
+	 * 入力された数を返す．<br>
+	 * 引数がnullの場合は，入力を受け付ける．<br>
+	 * ~ とりあえずは，引数の場合のみ．
+	 * @param arg intへ変換する数．<br>
+	 *            nullの場合は，入力を受け付ける．
+	 * @return 入力された数．
+	 * @throws java.util.InputMismatchException 入力が数値になっていない．
+	 */
+	public final int inputInt(final String arg) throws InputMismatchException {
+		int num = 0;
+		try {
+			if (arg == null) {
+				Scanner scan = new Scanner(System.in);
+				num = scan.nextInt();
+			} else {
+				num = Integer.parseInt(arg);
+			}
+		} catch (NumberFormatException e) {
+			throw new InputMismatchException();
+			//入力の値がちがうことから，InputMismatchExceptionと
+			//同じであると考え，InputMismatchExceptionとして処理する．
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		}
+		return num;
+	}
+	/**
+	 * mainメソッド．
+	 * @param args Command Line Arguments.
+	 */
+	public static void main(final String[] args) {
+		new Main(args);
+	}
 }
